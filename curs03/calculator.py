@@ -1,14 +1,23 @@
 """
 utilizatorul cere de la tastatura 2 cifre si un operator (+, -, *, /)
 """
-operator_1 = input("Adauga primul numar: ")
-while operator_1.isdigit() is False:
-    operator_1 = input("Adauga primul numar: ")
+def definire_operator(counter_parametru):
+    operator = input(f"Adauga {counter_parametru} numar tau: ")
+    while operator.isdigit() is False:
+        operator = input(f"Adauga {counter_parametru} numar: ")
+    return operator
 
 
-operator_2 = input("Adauga al doilea numar: ")
-while operator_2.isdigit() is False:
-    operator_2 = input('Adauga al doilea numar: ')
+operator_1 = definire_operator("primul")
+operator_2 = definire_operator("al doilea")
+# operator_1 = input("Adauga primul numar: ")
+# while operator_1.isdigit() is False:
+#     operator_1 = input("Adauga primul numar: ")
+#
+#
+# operator_2 = input("Adauga al doilea numar: ")
+# while operator_2.isdigit() is False:
+#     operator_2 = input('Adauga al doilea numar: ')
 
 
 operand = input("Adauga operandul (+, -, *, /): ")
