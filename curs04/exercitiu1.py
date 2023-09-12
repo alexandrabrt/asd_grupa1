@@ -17,6 +17,7 @@ def add_input(text_value: str) -> int:
 
 # print('tra la la la')
 
+
 def product_or_sum() -> str:
     input_1 = add_input("Alege primul nr: ")
     input_2 = add_input("Alege al doilea nr: ")
