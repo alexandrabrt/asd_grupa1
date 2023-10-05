@@ -18,6 +18,27 @@ variabila = pandas.DataFrame(taskuri, index=["ziua1", "ziua2", "ziua3"])
 # print(variabila.loc["ziua1"])
 # print(variabila.loc[[0, 1]])
 
-df = pandas.read_csv('Exemplu.csv')
-print(df)
+# df = pandas.read_csv('Exemplu.csv')
+# print(df)
 
+df = pandas.read_csv('date_test.csv')
+df.fillna(0, inplace=True)
+# dict_to_replace = {": ": 0, ":": 0}
+# df.replace(dict_to_replace, inplace=True)
+# df.replace(': ', 0, inplace=True)
+# df.replace(':', 0, inplace=True)
+# print(df.corr())
+# print(df.describe())
+# print(df)
+# df.to_csv('test1.csv')
+# import matplotlib.pyplot as plot
+# df.plot(kind='scatter', x='AT', y='BE')
+# df['AT'].plot(kind='hist')
+# plot.show()
+# print(df.head(2))
+# print(df.tail(2))
+# df.loc[2, 'AL'] = 45
+# print(df.transpose())
+# print(df.AL.tolist())
+for item, row in df.iterrows():
+    print(row)
