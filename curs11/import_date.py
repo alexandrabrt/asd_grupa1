@@ -7,12 +7,14 @@ df = pandas.read_csv("date_clienti.csv",
                      # names=["Companie", "Adresa", "Oras", "Cod postal", "Tara"])
 data_list = []
 for item, row in df.iterrows():
-    customer_value = df.iloc[item, 0]
-    address_value = df.iloc[item, 1]
-    city_value = df.iloc[item, 2]
-    postal_code_value = df.iloc[item, 3]
-    country_value = df.iloc[item, 4]
-    data_list.append((customer_value, address_value, city_value, int(postal_code_value), country_value))
+    # print(row.tolist())
+    # customer_value = df.iloc[item, 0]
+    # address_value = df.iloc[item, 1]
+    # city_value = df.iloc[item, 2]
+    # postal_code_value = df.iloc[item, 3]
+    # country_value = df.iloc[item, 4]
+    # data_list.append((customer_value, address_value, city_value, int(postal_code_value), country_value))
+    data_list.append(row.tolist())
 
 print(data_list)
 my_db = mysql.connector.connect(
