@@ -33,6 +33,7 @@ class Caine(Patruped, Carnivor):
     def __init__(self, name, varsta, tip_carne):
         Patruped.__init__(self, name, varsta)
         Carnivor.__init__(self, tip_carne)
+        self.tip_carne = carne
 
     #     Animal.__init__(self, varsta)
     #     self.name = name
@@ -53,7 +54,8 @@ exemplu_caine = Caine("Rex", 2, "porc")
 # print(exemplu_caine.name)
 # print(exemplu_caine.carne)
 # print(exemplu_caine.__dict__)
-print(exemplu_caine.patruped)
+# print(exemplu_caine.patruped)
+print(exemplu_caine.tip_carne)
 # print(exemplu_caine.nr_picioare)
 # print(Caine.nr_picioare)
 # print(exemplu_caine.__dict__)
