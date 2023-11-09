@@ -1,0 +1,16 @@
+<html>
+<head>Aplicatie Django</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>Username</label>
+            <input name="username" type="text">
+
+            <label>Password</label>
+            <input name="password" type="password">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</body>
+</html>
