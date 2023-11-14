@@ -121,3 +121,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/location/'

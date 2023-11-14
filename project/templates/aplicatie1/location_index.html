@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a class="btn btn-primary" href="{% url 'aplicatie1:adaugare' %}">Adauga locatii</a>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>State</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for item in location_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ item.city }}</td>
+                <td>{{ item.country }}</td>
+                <td>{{ item.active }}</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+    </table>
+{% endblock %}
