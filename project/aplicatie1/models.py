@@ -10,4 +10,4 @@ class Location(models.Model):
     updated_at = models.DateTimeField(auto_now=True, blank=True)
 
     def __str__(self):
-        return f"{self.city} {self.country}"
+        return f"{self.city} - {self.country}"
