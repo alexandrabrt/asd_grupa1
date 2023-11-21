@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'aplicatie1',
     'aplicatie2',
     'pontaj',
+    'userprofile',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,8 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/location/'
 LOGOUT_REDIRECT_URL = '/'
+
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# SESSION_COOKIE_AGE = 100
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
