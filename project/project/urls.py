@@ -25,5 +25,6 @@ urlpatterns = [
     path('companies/', include('aplicatie2.urls')),
     path('userprofile/', include('userprofile.urls')),
     path('pontaj/', include('pontaj.urls')),
+    path('my_api/', include('my_api.urls')),
 
 ]

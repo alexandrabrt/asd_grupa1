@@ -3,9 +3,12 @@ from django.contrib.auth.models import User
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.urls import reverse
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, UpdateView
 import random
 import string
+
+from userprofile.forms import NewAccountForm
+from userprofile.models import UserExtend
 
 
 def invite_user(user_id):
@@ -34,11 +37,17 @@ class CreateNewAccountView(LoginRequiredMixin, CreateView):
 
     model = User
     template_name = 'forms.html'
-    fields = ['first_name', 'last_name', 'username', 'email']
+    # fields = ['first_name', 'last_name', 'username', 'email']
+    form_class = NewAccountForm
+
+    def get_form_kwargs(self):
+        data = super(CreateNewAccountView, self).get_form_kwargs()
+        data.update({"pk": None})
+        return data
 
     def get_success_url(self):
         invite_user(self.object.id)
-        return reverse('aplicatie1:lista_locatii')
+        return reverse('userprofile:listare_utilizatori')
 
 
 class ListOfUserView(LoginRequiredMixin, ListView):
@@ -47,3 +56,16 @@ class ListOfUserView(LoginRequiredMixin, ListView):
     template_name = 'registration/registration_index.html'
 
 
+class UpdateUserView(LoginRequiredMixin, UpdateView):
+    model = UserExtend
+    template_name = 'forms.html'
+    # fields = ['first_name', 'last_name', 'username', 'email']
+    form_class = NewAccountForm
+
+    def get_form_kwargs(self):
+        data = super(UpdateUserView, self).get_form_kwargs()
+        data.update({"pk": self.kwargs['pk']})
+        return data
+
+    def get_success_url(self):
+        return reverse('userprofile:listare_utilizatori')
