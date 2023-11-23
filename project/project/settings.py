@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'aplicatie2',
     'pontaj',
     'userprofile',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
